@@ -14,9 +14,10 @@ const Home = () => {
     const fetchWorkouts = async () => {
       const response = await fetch('/api/workouts', {
         headers: {'Authorization': `Bearer ${user.token}`},
+        //console.log (fetchWorkouts);
       })
       const json = await response.json()
-
+     
       if (response.ok) {
         dispatch({type: 'SET_WORKOUTS', payload: json})
       }
@@ -24,6 +25,8 @@ const Home = () => {
 
     if (user) {
       fetchWorkouts()
+    // console.log (workouts);
+
     }
   }, [dispatch, user])
 

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
     "date-fns": "^3.3.1",
+    "mdb-react-ui-kit": "^7.2.0",
     "react": "^18.1.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.1.0",
@@ -41,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "react-scripts": "^5.0.1"
   }
 }

@@ -3,13 +3,12 @@ const mongoose = require('mongoose');
 
 // Get all Addusers
 const getAddUsers = async (req, res) => {
-  try {
-    const Addusers = await User.find();
-    res.status(200).json(Addusers);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
+  const Adduser_id = req.user._id
+  const addusers = await AddUser.find({Adduser_id}).sort({createdAt: -1})
+  res.status(200).json(addusers)
 };
+
+
 
 // Get a single user by ID
 const getAddUser = async (req, res) => {
@@ -30,9 +29,9 @@ const getAddUser = async (req, res) => {
 
 // Create a new Adduser
 const createAddUser = async (req, res) => {
-  const { firstName, lastName, email, addressLine1, addressLine2, contact, role, password } = req.body;
+  const { serialNumber,vendor,brand,model,purchasingDate,warrantyPeriod,genericName,equipmentType,comment } = req.body;
   try {
-    const Adduser = await AddUser.create({ firstName, lastName, email, addressLine1, addressLine2, contact, role, password });
+    const Adduser = await AddUser.create({ serialNumber,vendor,brand,model,purchasingDate,warrantyPeriod,genericName,equipmentType,comment });
     res.status(201).json(Adduser);
   } catch (error) {
     res.status(400).json({ error: error.message });

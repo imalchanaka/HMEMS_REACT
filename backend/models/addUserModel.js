@@ -3,39 +3,42 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const addUserSchema = new Schema({
-  firstName: {
+  serialNumber: {
     type: String,
     required: true
   },
-  lastName: {
+  vendor: {
     type: String,
     required: true
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true // Assuming email should be unique for each addUser
-  },
-  addressLine1: {
+  brand: {
     type: String,
     required: true
   },
-  addressLine2: {
+  model: {
+    type: String,
+    required: true
+  },
+  purchasingDate: {
+    type: Date,
+    required: true
+  },
+  warrantyPeriod: {
+    type: String,
+    required: true
+  },
+  genericName: {
+    type: String,
+    required: true
+  },
+  equipmentType: {
+    type: String,
+    required: true
+  },
+  comment: {
     type: String,
     required: false // Assuming this field is optional
-  },
-  contact: {
-    type: String,
-    required: true
-  },
-  role: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model('addUser', addUserSchema);
+module.exports = mongoose.model('Purchasing_Equipment', addUserSchema);

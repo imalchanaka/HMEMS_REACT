@@ -12,21 +12,21 @@ const requireAuth = require('../middleware/requireAuth'); // Uncomment this line
 const router = express.Router();
 
 // Require authentication for all user routes
-router.use(requireAuth);
+router.use(requireAuth)
 
 // GET all users
-router.get('/', getAddUsers);
+router.get('/', getAddUsers)
 
 // GET a single user by ID
-router.get('/:id', getAddUser);
+router.get('/:id', getAddUser)
 
 // POST a new user
-router.post('/', createAddUser);
+router.post('/', createAddUser)
 
 // DELETE a user by ID
-router.delete('/:id', deleteAddUser);
+router.delete('/:id', deleteAddUser)
 
 // UPDATE a user by ID
-router.patch('/:id', updateAddUser);
+router.patch('/:id', updateAddUser)
 
 module.exports = router;

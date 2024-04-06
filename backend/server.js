@@ -4,7 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 const UserRoutes = require('./routes/user')
-const addUser=require('./routes/addUser');
+const Adduser=require('./routes/addUser');
 //const requireAuth=require('./middleware/requireAuth')
 
 
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/workouts', workoutRoutes) 
 app.use ('/api/user',UserRoutes)
-app.use ('/api/addUser',addUser)
+app.use ('/api/addUser',Adduser)
 
 //app.use('app/requireAuth',requireAuth)
 

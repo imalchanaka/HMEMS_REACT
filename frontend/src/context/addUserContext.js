@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 
 export const UserContext = createContext();
 
@@ -10,7 +10,18 @@ export const userReducer = (state, action) => {
         ...state,
         users: [...state.users, action.payload],
       };
+
+    case 'GET_ADD_USERS': // Corrected case name
+      return { 
+        ...state,
+        users: [...state.users, action.payload],
+      };
+      case 'DELETE_WORKOUT':
+        return { 
+          workouts: state.workouts.filter(w => w._id !== action.payload._id) 
+        }
     // Add more cases for other user-related actions if needed
+
     default:
       return state;
   }
